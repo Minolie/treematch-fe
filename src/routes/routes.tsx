@@ -1,5 +1,7 @@
 const ROUTE = {
-    SIGNIN: '/sign-in'
+    SIGNIN: '/sign-in',
+    HOME: '/home',
+    QUESTIONNAIRE: '/quiz'
 };
 
 export default ROUTE;

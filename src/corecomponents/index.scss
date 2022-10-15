@@ -1,0 +1,30 @@
+.header {
+  align-items: center;
+  position: fixed;
+  z-index: 100;
+  background-color: #ffffff;
+  border-bottom: 2px solid #f2f2f4;
+  display: flex;
+  justify-content: space-between;
+}
+
+.header-logo {
+  align-items: center;
+  display: flex;
+}
+
+.header-profile {
+  cursor: pointer;
+  display: flex;
+  float: right;
+  align-items: center;
+  background-color: White;
+  border: 1px solid #f2f2f4;
+  border-radius: 29px;
+}
+
+.body-heading-gradient {
+  background: linear-gradient(to right, #7d8ef7 0%, #ff3841 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

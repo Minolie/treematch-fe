@@ -1,15 +1,14 @@
 import React, { FunctionComponent, useState } from "react";
 import LoadingOverlay from "react-loading-overlay-ts";
-import Router from './routes/router';
+import Router from "./routes/router";
 import Provider from "./Provider";
-
 
 const App = () => {
   const [preLoader, setPreLoader] = useState(false);
-  console.log('2');
+  console.log("2");
   return (
     <Provider>
-    <>
+      <>
         <LoadingOverlay
           active={preLoader}
           spinner
@@ -30,9 +29,9 @@ const App = () => {
             }),
           }}
           text="Loading TreeMatch...."
-        /> 
-         <Router />
-    </>
+        />
+        <Router />
+      </>
     </Provider>
   );
 };
