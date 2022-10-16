@@ -5,6 +5,7 @@ import PersonIcon from '@mui/icons-material/Person';
 
 import "../index.scss";
 import CustomMenu from "../menu/menu";
+import Logo from "../logo/logo";
 
 const Header = () => {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
@@ -37,7 +38,7 @@ const Header = () => {
           py={1.5}
           className="header-logo"
         >
-          <p>header</p>
+          <Logo fontSize={24} text="TreeMatch"/>
         </Grid>
         <Grid
           item

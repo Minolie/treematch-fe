@@ -23,7 +23,18 @@
   border-radius: 29px;
 }
 
-.body-heading-gradient {
+.home-welcome-text {
+  display: flex;
+}
+
+.home-welcome-text h1 {
+  font-size: 81px;
+  font-weight: 600;
+  font-family: 'Lexend';
+  color: #ffffff;
+}
+
+.home-welcome-text-radiant {
   background: linear-gradient(to right, #7d8ef7 0%, #ff3841 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;

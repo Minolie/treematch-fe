@@ -1,4 +1,5 @@
 import { Button } from "@mui/material";
+import { White, PrimaryButtonHover, PrimaryButtonClicked, PrimaryButtonDisabled } from "../color-constants";
 import { ButtonProps } from "./interface";
 
 export const PrimaryButton = ({
@@ -18,21 +19,21 @@ export const PrimaryButton = ({
         borderRadius: '5px',
         fontSize: '16px',
         fontWeight: 'bold',
-        fontFamily: 'Roboto',
+        fontFamily: 'Lexend',
         textTransform: 'none',
         padding: '9px 20px',
-        // '&:hover': {
-        //   backgroundColor: PrimaryButtonHover,
-        //   color: White,
-        // },
-        // '&:active': {
-        //   backgroundColor: PrimaryButtonClicked,
-        //   color: White,
-        // },
-        // '&.Mui-disabled': {
-        //   backgroundColor: PrimaryButtonDisabled,
-        //   color: White,
-        // },
+        '&:hover': {
+          backgroundColor: PrimaryButtonHover,
+          color: White,
+        },
+        '&:active': {
+          backgroundColor: PrimaryButtonClicked,
+          color: White,
+        },
+        '&.Mui-disabled': {
+          backgroundColor: PrimaryButtonDisabled,
+          color: White,
+        },
       }}
       // disabled={disabled}
       fullWidth={fullWidth}

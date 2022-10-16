@@ -1,4 +1,5 @@
 import { Grid } from "@mui/material";
+import { BodyBgColor } from "../color-constants";
 
 interface BodyProps {
   children: React.ReactNode;
@@ -15,14 +16,14 @@ const Body = ({ children, bgColor }: BodyProps) => {
           alignContent: "center",
           justifyContent: "center",
           flexDirection: "column",
-          backgroundColor: "#16103F", ///D6D1F9
+          backgroundColor: BodyBgColor,
           height: "100vh",
+          padding: 10
         }}
-        // pt={30}
       >
         <Grid
           item
-          sx={{ backgroundColor: bgColor ?? "#16103F", height: "50vh", width: "auto" }}
+          sx={{ backgroundColor: bgColor ?? BodyBgColor, height: "50vh", width: "auto" }}
         >
           {children}
         </Grid>

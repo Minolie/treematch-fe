@@ -1,7 +1,7 @@
 import { Box } from "@mui/material";
 import Body from "../../../corecomponents/body/body";
 import Header from "../../../corecomponents/header/header";
-import { HeadingOne } from "../../../corecomponents/typography/typography";
+import { TitleText } from "../../../corecomponents/typography/typography";
 import QuizForm from "../quiz-form/quiz-form";
 import { Style } from "../style";
 
@@ -16,9 +16,16 @@ const Quiz = () => {
             justifyContent: "space-around",
             borderRadius: "5px",
             width: "590px",
+            alignContent: "center",
           }}
         >
-          <HeadingOne text="Time to find your tree" color="black" />
+          <Box sx={{ justifyContent: "center", display: "flex" }}>
+            <TitleText
+              text="Time to find your tree"
+              color="black"
+              align="center"
+            />
+          </Box>
           <QuizForm />
         </Box>
       </Body>

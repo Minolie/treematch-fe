@@ -2,18 +2,15 @@ import { Typography } from "@mui/material";
 import { TypographyProps } from "./interface";
 
 export const HeadingOne = (props: TypographyProps) => {
-  const { color, text, gradient } = props;
+  const { color, text, align } = props;
   return (
     <Typography
       sx={{
         color: {color},
-//         background: 'linear-gradient(to right, #7d8ef7 0%, #ff3841 100%)',
-//         webkitbackgroundClip: 'text',
-//   webkitTextFillColor: 'transparent',
-        textAlign: "left",
-        fontSize: ["32px", "32px", "32px", "32px", "34px"],
-        fontWeight: "bold",
-        fontFamily: "Raleway",
+        textAlign: {align},
+        fontSize: ["81px", "81px", "81px", "81px", "91px"],
+        fontWeight: 600,
+        fontFamily: "Lexend",
         textTransform: "none",
         // ...sx,
       }}
@@ -22,3 +19,43 @@ export const HeadingOne = (props: TypographyProps) => {
     </Typography>
   );
 };
+
+export const RegularText = (props: TypographyProps) => {
+  const { color, text, align } = props;
+  return (
+    <Typography
+      sx={{
+        color: {color},
+        textAlign: {align},
+        display: 'flex',
+        fontSize: ["14px", "14px", "14px", "14px", "16px"],
+        fontWeight: "normal",
+        fontFamily: "Lexend",
+        textTransform: "none",
+        // ...sx,
+      }}
+    >
+      {text}
+    </Typography>
+  );
+}
+
+export const TitleText =  (props: TypographyProps) => {
+  const { color, text, align } = props;
+  return (
+    <Typography
+      sx={{
+        color: {color},
+        textAlign: {align},
+        display: 'flex',
+        fontSize: ["24px", "24px", "24px", "24px", "28px"],
+        fontWeight: "normal",
+        fontFamily: "Lexend",
+        textTransform: "none",
+        // ...sx,
+      }}
+    >
+      {text}
+    </Typography>
+  );
+}
