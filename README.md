@@ -24,11 +24,6 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
  - I've desinged core compoenents for component reusibility
 
 
-## Improvements
-
-- Improving code quality with eslint
-
-
 ## UI
 
 **Home**
