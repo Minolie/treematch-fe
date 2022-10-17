@@ -1,16 +1,17 @@
-import React, { FunctionComponent, useState } from "react";
+import React, { useState } from "react";
 import LoadingOverlay from "react-loading-overlay-ts";
 import Router from "./routes/router";
 import Provider from "./Provider";
+import useRootStore from "./store/useRootStore";
 
 const App = () => {
-  const [preLoader, setPreLoader] = useState(false);
-  console.log("2");
+  const { questionLoading, question } = useRootStore().quizStore;
+
   return (
     <Provider>
       <>
-        <LoadingOverlay
-          active={preLoader}
+        {/* <LoadingOverlay
+          active={questionLoading}
           spinner
           styles={{
             overlay: (base) => ({
@@ -29,7 +30,7 @@ const App = () => {
             }),
           }}
           text="Loading TreeMatch...."
-        />
+        /> */}
         <Router />
       </>
     </Provider>

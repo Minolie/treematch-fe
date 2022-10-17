@@ -7,6 +7,7 @@ import {
   FormHelperText,
 } from "@mui/material";
 import { Controller, useFormContext } from "react-hook-form";
+
 import { AnswerProps } from "./interface";
 
 const AnswerForm = (props: AnswerProps) => {
@@ -16,8 +17,6 @@ const AnswerForm = (props: AnswerProps) => {
     control,
     formState: { errors },
   } = methods;
-
-  console.log('errors', errors);
 
   return (
     <>
@@ -31,7 +30,6 @@ const AnswerForm = (props: AnswerProps) => {
           name="answers"
           render={({ field }) => (
             <RadioGroup
-              value={field}
               onChange={(value) => field.onChange(value.target.value)}
               aria-labelledby="demo-controlled-radio-buttons-group"
               name="controlled-radio-buttons-group"
@@ -48,7 +46,6 @@ const AnswerForm = (props: AnswerProps) => {
                 {answers.map((item, i) => (
                   <FormControlLabel
                     value={item}
-                    //   name={field.value}
                     control={
                       <Radio
                         sx={{
@@ -66,8 +63,8 @@ const AnswerForm = (props: AnswerProps) => {
             </RadioGroup>
           )}
         />
-        <FormHelperText sx={{fontFamily: 'Lexend', paddingLeft: 22}}>
-          {(errors?.answers?.message)}
+        <FormHelperText sx={{ fontFamily: "Lexend", paddingLeft: 22 }}>
+          {errors?.answers?.message}
         </FormHelperText>
       </FormControl>
     </>

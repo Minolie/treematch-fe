@@ -1,7 +1,9 @@
 import { Box } from "@mui/material";
+
 import Body from "../../../corecomponents/body/body";
 import Header from "../../../corecomponents/header/header";
 import { TitleText } from "../../../corecomponents/typography/typography";
+
 import QuizForm from "../quiz-form/quiz-form";
 import { Style } from "../style";
 

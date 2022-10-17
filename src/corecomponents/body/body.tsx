@@ -18,12 +18,16 @@ const Body = ({ children, bgColor }: BodyProps) => {
           flexDirection: "column",
           backgroundColor: BodyBgColor,
           height: "100vh",
-          padding: 10
+          padding: 10,
         }}
       >
         <Grid
           item
-          sx={{ backgroundColor: bgColor ?? BodyBgColor, height: "50vh", width: "auto" }}
+          sx={{
+            backgroundColor: bgColor ?? BodyBgColor,
+            height: "50vh",
+            width: "auto",
+          }}
         >
           {children}
         </Grid>

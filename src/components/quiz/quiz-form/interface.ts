@@ -1,3 +1,3 @@
 export interface AnswerProps {
-    answers: [];
+  answers: string[];
 }

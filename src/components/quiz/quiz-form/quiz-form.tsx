@@ -1,26 +1,33 @@
 import { FieldValues, FormProvider, useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useEffect, useState } from "react";
-import { TreeMatchClient } from "../../../api/treematch.api";
+import { Grid, Box } from "@mui/material";
+import { observer } from "mobx-react";
+
 import {
   RegularText,
   TitleText,
 } from "../../../corecomponents/typography/typography";
-import { Grid, Box } from "@mui/material";
 import AnswerForm from "./quiz-answer-form";
-import { PrimaryButton } from "../../../corecomponents/button/button";
-import { PrimaryButtonColor } from "../../../corecomponents/color-constants";
 import quizValidations from "../validation";
 import Logo from "../../../corecomponents/logo/logo";
+import useRootStore from "../../../store/useRootStore";
+import { PrimaryButtonColor } from "../../../corecomponents/color-constants";
+import { PrimaryButton } from "../../../corecomponents/button/button";
 
-const QuizForm = () => {
-  const [question, setQuestion] = useState("");
-  const [answers, setAnswers] = useState<any>([]);
-  const [activeStep, setActiveStep] = useState(1);
-  const [match, setMatch] = useState({
-    name: "",
-    description: "",
-  });
+const QuizForm = observer(() => {
+  const {
+    question,
+    setQuestion,
+    getQuestions,
+    questionLoading,
+    submitAnswer,
+    stepId,
+    match,
+    answers,
+    setMatch,
+  } = useRootStore().quizStore;
+  const [answersT, setAnswers] = useState<any>([]);
 
   const methods = useForm({
     shouldUnregister: false,
@@ -32,15 +39,14 @@ const QuizForm = () => {
 
   useEffect(() => {
     fetchQuestions();
-  }, []);
+  }, [questionLoading]);
 
   const fetchQuestions = async () => {
-    const resp = await TreeMatchClient.FetchQuestion();
+    const resp = await getQuestions();
     if (resp) {
       setQuestion(resp?.question);
       setAnswers(resp?.answers);
     }
-    return resp;
   };
 
   const handleFormSubmit = async () => {
@@ -50,15 +56,12 @@ const QuizForm = () => {
   };
 
   const onSubmit = async (form: FieldValues) => {
-    const resp = await TreeMatchClient.SendAnswers(activeStep, form?.answers);
-    if (resp?.match === null && resp?.question) {
-      setQuestion(resp?.question?.question);
-      setActiveStep(resp?.question?.step_id);
-      setAnswers(resp?.question?.answers);
-      methods.reset({ answers: "" });
-    } else if (resp?.question === null && resp?.match) {
-      setMatch(resp?.match);
-    }
+    const responseObj: IQuizStore.Answer = {
+      step_id: stepId,
+      answer: form?.answers,
+    };
+    await submitAnswer(responseObj);
+    methods.reset({ answers: "" });
   };
 
   const handleValidations = async () => {
@@ -70,7 +73,7 @@ const QuizForm = () => {
   };
 
   const handleQuizReset = () => {
-    fetchQuestions();
+    getQuestions();
     setMatch({ name: "", description: "" });
   };
 
@@ -92,7 +95,6 @@ const QuizForm = () => {
                 >
                   <RegularText text={match?.description} color="black" />
                 </Box>
-
                 <Box pt={5} sx={{ justifyContent: "center", display: "flex" }}>
                   <PrimaryButton
                     buttonName="Take the quiz again"
@@ -105,7 +107,7 @@ const QuizForm = () => {
             ) : (
               <>
                 <Box sx={{ justifyContent: "center", display: "flex" }}>
-                  <RegularText text={question} color="black" />
+                  <RegularText text={question.question} color="black" />
                 </Box>
                 <AnswerForm answers={answers} />
                 <Box pt={5} sx={{ justifyContent: "center", display: "flex" }}>
@@ -123,6 +125,6 @@ const QuizForm = () => {
       </FormProvider>
     </div>
   );
-};
+});
 
 export default QuizForm;

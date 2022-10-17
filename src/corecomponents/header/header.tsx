@@ -1,7 +1,7 @@
 import { Avatar, Box, Grid, IconButton } from "@mui/material";
 import { useState } from "react";
-import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
-import PersonIcon from '@mui/icons-material/Person';
+import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
+import PersonIcon from "@mui/icons-material/Person";
 
 import "../index.scss";
 import CustomMenu from "../menu/menu";
@@ -19,9 +19,7 @@ const Header = () => {
     setAnchorEl(null);
   };
 
-  const handleCustomMenuClick = () => {
-    
-  }
+  const handleCustomMenuClick = () => {};
 
   return (
     <Grid container px={[1, 1, 1, 4, 6]} className="header">
@@ -38,7 +36,7 @@ const Header = () => {
           py={1.5}
           className="header-logo"
         >
-          <Logo fontSize={24} text="TreeMatch"/>
+          <Logo fontSize={24} text="TreeMatch" />
         </Grid>
         <Grid
           item
@@ -60,20 +58,18 @@ const Header = () => {
             aria-haspopup="true"
             aria-expanded={open ? "true" : undefined}
           >
-            <KeyboardArrowDownIcon sx={{ml : 1}}/>
-            <IconButton size="small" sx={{ml: 0.5, p: 0.4}}/>
-            <Avatar sx={{width: '2em', height: '2em'}}>
-                <PersonIcon/>
+            <KeyboardArrowDownIcon sx={{ ml: 1 }} />
+            <IconButton size="small" sx={{ ml: 0.5, p: 0.4 }} />
+            <Avatar sx={{ width: "2em", height: "2em" }}>
+              <PersonIcon />
             </Avatar>
           </Box>
           <CustomMenu
-          anchorEl={anchorEl}
-          open={open}
-          handleClose={handleClose}
-          handleClick={handleCustomMenuClick}
-          options={[
-            { value: 'Log out', label: 'Log out' }
-          ]}
+            anchorEl={anchorEl}
+            open={open}
+            handleClose={handleClose}
+            handleClick={handleCustomMenuClick}
+            options={[{ value: "Log out", label: "Log out" }]}
           />
         </Grid>
       </Box>

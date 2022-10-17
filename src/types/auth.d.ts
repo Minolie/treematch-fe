@@ -1,4 +1,4 @@
-import { AuthStore as AuthStoreModel } from '../store/Tree';
+import { AuthStore as AuthStoreModel } from "../store/Quiz";
 
 export as namespace IAuthStore;
 
