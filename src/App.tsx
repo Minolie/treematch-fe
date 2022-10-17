@@ -7,9 +7,6 @@ import useRootStore from "./store/useRootStore";
 const App = () => {
   const { questionLoading, question } = useRootStore().quizStore;
 
-  // improvements for production
-  // adding an error boundry - using a software such as sentry or bugsnag to help detect any prod build errors
-  // usiing a BrowserRouter or a HashRouter
   return (
     <Provider>
       <>

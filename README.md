@@ -21,14 +21,16 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 **Note**
  - I've pushed the .env files for testing purposes.
  - Sign In/Register screens are available but the implementation is not done.
- - I've desinged core compoenents for component reusibility
+ - I've designed core compoenents for component reusibility
 
 ## Improvements
-  - adding an error boundry 
-    - Using a software such as sentry or bugsnag to help detect any prod build errors
+  - Adding an error boundry 
+    - using a software such as sentry or bugsnag to help detect any prod build errors
   - Using a BrowserRouter or a HashRouter for routing
   - Dependency optimisation 
-    - using lodash and momenths
+    - using Lodash and Momentjs
+  - Code quality and readability
+    - using ESLint for code analysis
 
 ## UI
 

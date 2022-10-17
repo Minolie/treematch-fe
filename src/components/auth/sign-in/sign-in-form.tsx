@@ -2,7 +2,7 @@ import { Box } from "@mui/material";
 import { Controller, useFormContext } from "react-hook-form";
 
 import { PrimaryButton, GhostButton } from "../../../corecomponents/button/button";
-import { OxfordBlue, PrimaryButtonColor } from "../../../corecomponents/color-constants";
+import { OxfordBlue, PrimaryButtonColor, ErrorText } from "../../../corecomponents/color-constants";
 import CustomTextField from "../../../corecomponents/text-field/text-field";
 import { RegularText } from "../../../corecomponents/typography/typography";
 import { SignInFormProps, UserSignInFormState } from "../interface";
@@ -37,7 +37,7 @@ const SignInForm = (props: SignInFormProps) => {
         />
         <span
           style={{
-            color: "#F4362D",
+            color: ErrorText,
             fontSize: "14px",
             fontWeight: "lighter",
             fontFamily: "DM Sans",
@@ -69,7 +69,7 @@ const SignInForm = (props: SignInFormProps) => {
 
         <span
           style={{
-            color: "#F4362D",
+            color: ErrorText,
             fontSize: "14px",
             fontWeight: "lighter",
             fontFamily: "DM Sans",
