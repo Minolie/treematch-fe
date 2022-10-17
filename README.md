@@ -1,46 +1,54 @@
-# Getting Started with TreeMatch
+#TreeMatch
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A simple, matching program designed to match a user's plant preference. 
 
-## Available Scripts
-
-In the project directory, you can run:
-
+## Running the app
 ### `npm start`
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Tech stack
 
-### `npm test`
+- FE Framework - React/Typescript
+- Design Library - Material UI
+- Forms - React Hook Forms
+- Axios - HTTP Client
+- Mobx - State Manager
+- scss - Styling
+- Yup - Form validtor
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+**Note**
+ - I've pushed the .env files for testing purposes.
+ - Sign In/Register screens are available but the implementation is not done.
+ - I've desinged core compoenents for component reusibility
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Improvements
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Improving code quality with eslint
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+## UI
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+**Home**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+![treematch.fe](src/assets/app/home.png)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+**Sign In**
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+![treematch.fe](src/assets/app/sign-in.png)
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+**Sign Up**
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+![treematch.fe](src/assets/app/sign-up.png)
+
+**Quiz**
+
+![treematch.fe](src/assets/app/quiz.png)
+
+
+**Match**
+
+![treematch.fe](src/assets/app/match.png)
